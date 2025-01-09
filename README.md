@@ -26,11 +26,17 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>Deployment and Configuration Steps</h2>
 
+<<h2>Installation Steps</h2>
+
+![image](https://github.com/user-attachments/assets/5a58f9d1-4fdb-406f-b71d-598c3d3123a0)
+![image](https://github.com/user-attachments/assets/8f86bff7-c004-472e-af09-13ba4d849d12)
+
 <p>
-
-
+Open Server Manager. Open Manage Tab and click on Add Roles and Features. Follow installation procedure.
 </p>
-<br />
+<p>
+ ____________________________________________________________________________________________________________________________
+</p>
 
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
