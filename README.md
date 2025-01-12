@@ -6,7 +6,7 @@
 <h1>Active Directory Deployment and Configuration </h1>
 
 
-<p>This project provides a comprehensive guide to deploying and configuring Active Directory on a designated Domain Controller (DC-1) virtual machine. It includes steps to install Active Directory, promote the server to a Domain Controller, create user accounts, and join a client machine (Client-1) to the domain. The tutorial also covers configuring Remote Desktop access for non-administrative users, ensuring a secure and functional Active Directory environment within Azure.
+<p>This project provides a comprehensive guide to deploying and configuring Active Directory on a designated Domain Controller (DC-1) virtual machine. We will install Active Directory, promote the server to a Domain Controller, create user accounts, and join a client machine (Client-1) to the domain. The tutorial also covers configuring Remote Desktop access for non-administrative users, ensuring a secure and functional Active Directory environment within Azure.
 
 </p>
 
@@ -24,7 +24,6 @@
 
 - Windows Server 2022
 - Windows 10 (21H2)
-- macOS 
 
 
 <h1>Creating Our Resource, Network, & Virtual Machines </h1> 
