@@ -6,9 +6,9 @@
 <h1>Active Directory Deployment and Configuration </h1>
 
 
-<p>This project provides a guide to deploying and configuring Active Directory on a designated Domain Controller (DC-1) virtual machine. 
-  We will install Active Directory, promote the server to a Domain Controller, create user accounts, and join a client machine (Client-1) to the domain. 
-  This will also cover configuring Remote Desktop access for non-administrative users and ensuring a secure and functional Active Directory environment within Azure.
+<p>This project shows us how to deploy and configure Active Directory on a designated Virtual Machine we will call Domain Controller-1 (DC-1). 
+  We will promote the server to a Domain Controller, create user accounts, and another Virtual Machine(Client-1) join the domain. 
+  This will also cover using Remote Desktops to access Virtual Machines for non-administrative users and ensure a secure and functional Active Directory environment within Azure.
 
 </p>
 
