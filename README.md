@@ -224,83 +224,55 @@
 - Type in PowerShell ipconfig /all
 - After execution, the DNS servers should display the private IP address of DC-1 in a highlighted manner.
 - Now client 1 should be using DC-1 as the DNS server
-
-
-<h1> Configuration Steps Pt. 2 </h1>
-
 <br>
 
+<h3>Install Active Directory and Domain services in DC-1 </h3>
 
-<h3>&#9312; Install Active Directory and Domain services in DC-1 </h3>
-
+![image](https://github.com/user-attachments/assets/f143c2f1-a3ec-49d7-805a-7d009ae2a870)
 <br>
 
-(insert pic 2:56)
-<br> 
-
-- To make sure which virtual machine you are in see if the Microsoft store is located below in the taskbar if so that would be Windows 10 which is not DC-1
-
-- Another way is going into your system settings and looking at the operating system
-
-- Please navigate to the search bar located below and enter "Server Manager" if it is not displayed in the Start menu.
-
+![image](https://github.com/user-attachments/assets/94927c0a-db83-46c6-bf57-77402e8822ec)
 <br>
 
-<img width="1676" alt="12" src="https://github.com/user-attachments/assets/dc010b2f-170c-4fd3-8c1f-8a63bb7a29a4" />
-
+![image](https://github.com/user-attachments/assets/0762b4d3-1097-4106-a81b-842014385f29)
 <br>
-<br>
-
 - In the Server Manager dashboard, click 'Add Roles and Features' and continue the setup
-
-<br>
-
 - You’re going to click on "Next" mostly throughout the setup
-
-  (insert pic 3:14)
-
 - For Server Selection, there should only be 1 which is DC-1
-
-
-<img width="774" alt="14" src="https://github.com/user-attachments/assets/9f9e56d2-a6bf-4bdb-a4c2-0eaf2402862a" />
-<img width="680" alt="AD-setup" src="https://imgur.com/cQnpkfN.png">
-
-
-
 <br>
 
-- In Server Roles check mark Active Directory Domain Services --> hit add features
+![image](https://github.com/user-attachments/assets/bb57718a-a9cf-4bf1-8145-0b451fa1a3bf)
+<br>
 
-- Then hit Next, Check mark "Restart the destination server automatically if required" --> click YES --> press Install
-
+![image](https://github.com/user-attachments/assets/95a92afe-c827-4135-95d2-0a0a0f4953e3)
+<br>
+- In Server Roles check mark Active Directory Domain Services.
+- Then hit Next, Check mark "Restart the destination server automatically if required" 
+- Install
 - After the installation hit close
+ <br> 
+<h3>Promote DC-1 to Domain Controller </h3>
 
+![image](https://github.com/user-attachments/assets/36775f91-aa0b-491e-8aa8-59dad5bff7bb)
+<br>
 
-<h3>&#9313; Promote DC-1 to Domain Controller </h3>
+![image](https://github.com/user-attachments/assets/9de26c98-6721-482c-8116-cbc91f4f5a63)
+<br>
 
-- Once the installation is done, notice the flag on the Server Manager at the top right
-  
-- Click on the flag and press the highlighted text "promote this server a.k.a DC-1 to Domain Controller"
-
-<img width="350" alt="notif" src="https://imgur.com/4W04gBQ.png">
-
-
-
--  Next, we will select 'Add a new forest' and set the Root domain name to “mydomain.com”
-
--  Hit Next, where it says "Directory Services Restore Mode (DSRM) password"  Just put in a password that you can remember and confirm it
-
-  5:18
-
-<img width="565" alt="my domain" src="https://imgur.com/ovGgm26.png"> 
-  
+![image](https://github.com/user-attachments/assets/9715a72c-06d5-44f4-8d50-d5de966d9876)
+<br>
+- Once the installation is done, there is a Yellow Flag at the top right in the Server Manager.
+- Click on the flag and press the highlighted text "promote this server to Domain Controller"
+- Next, we will select 'Add a new forest' and set the Root domain name to “mydomain.com”
+- Hit Next, where it says "Directory Services Restore Mode (DSRM) password"  Just put in a password that you can remember and confirm it
 - Finish setup and restart DC-1
+<br>
 
+![image](https://github.com/user-attachments/assets/a3901e13-02c6-480a-82c5-b3c95120e208)
+<br>
 - Log back into Remote Desktop with your username credentials following with "@mydomain.com" 
-
-
-
-<h3>&#9314; Create an Admin in Active Directory </h3>
+<br>
+<h3>Create an Admin in Active Directory </h3>
 
 - Once DC-1 has rebooted, click on tools and select Active Directory Users and Computers
 
