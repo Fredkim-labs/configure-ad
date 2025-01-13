@@ -270,43 +270,43 @@
 
 ![image](https://github.com/user-attachments/assets/a3901e13-02c6-480a-82c5-b3c95120e208)
 <br>
-- Log back into Remote Desktop with your username credentials following with "@mydomain.com" 
+- Log back into Remote Desktop with your username credentials following with "\mydomain.com" 
 <br>
 <h3>Create an Admin in Active Directory </h3>
 
-- Once DC-1 has rebooted, click on tools and select Active Directory Users and Computers
-
-- Right click on mydomain.com; select -> New -> Organizational Unit 
-
-<img width="500" alt="Users" src="https://imgur.com/VESNQeS.png">
-
+![image](https://github.com/user-attachments/assets/77310044-5a70-405c-9f0e-dba2a30772b7)
 <br>
 
-<p><strong> We will create two OU's labeled "_EMPLOYEES" and "_ADMINS" </strong></p>
+![image](https://github.com/user-attachments/assets/036cc4d1-e816-4541-948d-98a8dc054a72)
+<br>
 
-<img width="500" alt="admins" src="https://imgur.com/vsSxufF.png">
+![image](https://github.com/user-attachments/assets/5150306f-951b-4a0f-994d-57f9fc90c2fd)
+<br>
+- Once DC-1 has rebooted, click on start, expand Windows Administrative Tools, and select Active Directory Users and Computers/
+- Right-click on mydomain.com, select New then Organizational Unit 
+- <p><strong> We will create two OU's labeled "_EMPLOYEES" and "_ADMINS" </strong></p>
 
+![image](https://github.com/user-attachments/assets/871da000-3cd3-47ca-a57b-58ffe6f81d3f)
+<br>
 
+![image](https://github.com/user-attachments/assets/a1498e72-62b2-4b8b-a5b0-a93f6e06ff56)
+<br>
 
-<p><strong>Right click on Users and create a new user named "Jane Doe" with the username "jane_admin"</strong></p>
+![image](https://github.com/user-attachments/assets/d83b3220-874a-403f-b368-660fcd16ae13)
+<br>
 
-<img width="450" alt="jane doe" src="https://imgur.com/n9RKfcz.png">
+![image](https://github.com/user-attachments/assets/4e1ff84d-027a-4776-89d7-248b2fde02be)
+<br>
+- Right-click on Users and create a new user named "Jane Doe" with the username "jane_admin"
+- Change Jane Doe into an admin account by right-clicking her name and adding her to the “Domain Admins” security group
 
-
-
-<p><strong>We will change Jane Doe into an admin account by right clicking her name and adding her to the “Domain Admins” security group</strong></p>
-
-<img width="450" alt="add to group" src="https://imgur.com/n9RKfcz.png">
-
-
-
-<p><strong>Logout of DC-1 and sign back in with Jane Doe’s credentials</strong></p>
-
-<img width="400" alt="jane login" src="https://imgur.com/EnnzYVs.png">
-
-
-
-<h3>&#9315; Join Client-1 to Domain </h3>
+<br>
+![image](https://github.com/user-attachments/assets/fb9e25ef-487b-4958-88f7-f3b870897996)
+<br>
+<p><strong>- Logout of DC-1 and sign back in with Jane Doe’s credentials</strong></p>
+<p><strong>- From now on we will be using Jane Doe’s credentials</strong></p>
+<br>
+<h3>Join Client-1 to Domain </h3>
 
 <p><strong> For Client-1 to join the domain, the DNS server must be changed. Therefore we will set it's DNS server as DC-1's private IP address</strong></p>
 
