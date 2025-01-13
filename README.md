@@ -331,25 +331,33 @@
 <br>
 - Use admin credentials to join the domain.
 - Client-1 has been added, and the VM will restart.
-
-
-
-<h3>&#9316; Setup Remote Desktop for non-administrative users </h3>
-
-- Log back into Client-1 using "jane_admin" credentials and open Settings -> Remote Desktop -> User Accounts and click “Select users that can remotely access this PC”
-- Add Domain Users
-
 <br>
 
+![image](https://github.com/user-attachments/assets/d5af81d2-8967-4ebf-83a5-16055a5a306f)
+<br>
+- Open Active Directory Users and Computers
+- To verify, click on computers and you will see Client-1
+<br>
+<h3>Setup Remote Desktop for non-administrative users </h3>
 
-<img width="350" src="https://imgur.com/R2sxVPR.png">
-
-<p><strong>This allows normal users to login to Client-1</strong></p>
-
+![image](https://github.com/user-attachments/assets/f9c2aa7e-a24e-4871-a673-0221d4856e6a)
 <br>
 
+![image](https://github.com/user-attachments/assets/634a60ef-7027-473d-93b4-0623dee87904)
+<br>
 
-
+![image](https://github.com/user-attachments/assets/fda7ad99-ed40-4694-aa27-7af2ff96c4b5)
+<br>
+- Log back into Client-1 using "mydomain.cpm\jane_admin" credentials
+- Right-click Start and open "Systems"
+- Select Remote Desktop
+- Under User Accounts and click “Select users that can remotely access this PC”
+- Add Domain Users and hit ok.
+  
+![image](https://github.com/user-attachments/assets/33856b33-634b-4ed7-83bd-688ff8d41b03)
+<br>
+<p><strong>- This allows normal users to login to Client-1</strong></p>
+<br>
 
 <h2> Final Thoughts </h2>
 
