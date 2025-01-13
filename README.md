@@ -160,7 +160,7 @@
 <br>
 - Right-click the start button and select Run.
 - Type "wf.msc" to open Windows's Firewall.
-- 
+
 ![image](https://github.com/user-attachments/assets/9e6e591b-3202-488f-926a-8eb788688b94)
 <br>
 
@@ -203,10 +203,13 @@
 - Paste the Client-1's Public IP into the Remote Desktop
 - Fill in Client-1's username and password and log in to Client-1.
 <br>
+
 ![image](https://github.com/user-attachments/assets/3d1932fe-60a4-4bc8-b532-2cb9bfc3c708)
 <br>
+
 ![image](https://github.com/user-attachments/assets/ab17fba3-ee32-424b-82a2-660c33f99eef)
 <br>
+
 ![image](https://github.com/user-attachments/assets/d44e11a9-0c45-4819-9cbd-94a4c84a7ef7)
 <br>
 - Open Powershell
@@ -215,6 +218,7 @@
 
 ![image](https://github.com/user-attachments/assets/9f10e1c3-f0c4-4981-8867-74f398c3a827)
 <br>
+
 ![image](https://github.com/user-attachments/assets/bbef8f2a-e4da-446e-98ca-b864277f9b8a)
 <br>
 - Type in PowerShell ipconfig /all
