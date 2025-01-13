@@ -358,8 +358,6 @@
 <br>
 <p><strong>- This allows normal users to login to Client-1</strong></p>
 <br>
-
 <h2> Final Thoughts </h2>
-
 <p>
-We've successfully completed the Active Directory Deployment and Configuration phase. By configuring Active Directory on the Domain Controller, we established our infrastructure, created a forest and administrator account, and integrated Client-1 into the domain. </p>
+We've completed an Active Directory Deployment and Configuration exercise. By configuring Active Directory on the Domain Controller, we established our infrastructure, created a forest and administrator account, and integrated Client-1 into the domain. </p>
