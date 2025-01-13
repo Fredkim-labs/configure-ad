@@ -42,7 +42,7 @@
   
   <br><br>
 
-<h3>&#9313; Create the Virtual Network</h3>
+<h3Create the Virtual Network</h3>
 
 ![image](https://github.com/user-attachments/assets/e2ba70b0-4eb6-4ef4-872c-a5cb2c323fe9)
 <br>
@@ -59,6 +59,7 @@
 
 ![image](https://github.com/user-attachments/assets/1708079b-6256-46ea-a0fc-a17957181e8e)
 <br>
+
 ![image](https://github.com/user-attachments/assets/04b0257a-4d86-4dbb-a8ae-736dcf0a21d1)
 <br>
 
@@ -71,12 +72,14 @@
   
 ![image](https://github.com/user-attachments/assets/b172051b-b136-44ff-8991-ba601ddfa421)
 <br>
+
 ![image](https://github.com/user-attachments/assets/31dd2735-33bd-4231-9c12-247c3cf20b3d)
 <br>
 - It is essential to ensure that there are a minimum of 2 virtual CPUs (VCPUs) allocated.
 - It is advisable to document your username and password for future reference
 - Check both of the licensing agreements and then proceed by selecting the Networking option
 <br>
+
   ![image](https://github.com/user-attachments/assets/c7a5ba9f-7745-46de-8d56-5473fbd7e430)
 <br>
   
@@ -87,8 +90,10 @@
 
 ![image](https://github.com/user-attachments/assets/b9ee4fbb-434b-45c3-adaf-e2f3712cd6e1)
 <br>
+
 ![image](https://github.com/user-attachments/assets/ca547d44-4197-4443-94de-2cae3aada4b7)
 <br>
+
 ![image](https://github.com/user-attachments/assets/4cbea7d7-e379-432f-a5dd-70c32b635fff)
 <br>
 - The virtual machine will be designated as "Client-1"
@@ -110,8 +115,10 @@
 
 ![image](https://github.com/user-attachments/assets/6a4d753d-3825-4d33-9807-55672878dc3b)
 <br>
+
 ![image](https://github.com/user-attachments/assets/35516c59-6b5f-4038-b8e9-1a9488782951)
 <br>
+
 ![image](https://github.com/user-attachments/assets/a4cf3190-b84a-419c-b59c-0f486c99be49)
 <br>
 - We will begin by going to the virtual machine dc-1 and going to the network settings
@@ -123,8 +130,10 @@
 
 ![image](https://github.com/user-attachments/assets/58d8b817-b8fc-46b4-9ff8-c2bb359f58c5)
 <br>
+
 ![image](https://github.com/user-attachments/assets/2e523125-eaab-4984-802e-76c20dc21cac)
 <br>
+
 ![image](https://github.com/user-attachments/assets/7a46f009-189f-4118-9658-c638f5d7aed8)
 <br>
 
@@ -137,76 +146,80 @@
 ![image](https://github.com/user-attachments/assets/3f7dc033-d930-48e8-afc0-f3b1d2649b42)
 <br>
 - Once connected and loaded if you don’t have Server Manager pop up at start-up, then search for "Server Manager" in the start menu.
-- If "Server Manager" doesn't start-up or can't be found, then you may have installed the wrong OS.
+- If "Server Manager" doesn't start up or can't be found, then you may have installed the wrong OS.
 <br>
 <h3>Turn the firewall off for DC-1</h3>
 
-
-
-- In the domain controller right click the start menu and press run, type wf.msc this is for Windows firewall
-
-(insert pic 13:40)
-
-- In the firewall, we are going to disable it so click on Windows Defender Firewall Properties ---> hit the off option for the Firewall state on every profile ---> hit apply then OK
-
-- After that, the firewall should be off
-
+![image](https://github.com/user-attachments/assets/401d8d7b-1e73-47cb-bb3d-5d40464ac142)
 <br>
 
-<h3>&#9315; Set Client-1's DNS settings to DC-1's Private IP address </h3>
+![image](https://github.com/user-attachments/assets/4dda1c3b-83a8-4967-8566-1265c9fa8b52)
+<br>
 
-(insert pic 14:40)  (insert pic 15:01)
+![image](https://github.com/user-attachments/assets/7a3b2222-99b1-4f99-bd31-6314488ad6e6)
+<br>
+- Right-click the start button and select Run.
+- Type "wf.msc" to open Windows's Firewall.
+- 
+![image](https://github.com/user-attachments/assets/9e6e591b-3202-488f-926a-8eb788688b94)
+<br>
 
-- First back in the Azure portal get DC-1's Private IP address and copy it, then go to Client 1 --> Networking --> Network Settings and click on Client 1's Virtual Network Interface Card
+![image](https://github.com/user-attachments/assets/65d05861-6495-4659-9574-1ad97419a79b)
+<br>
+- In the firewall, select Windows Defender Firewall Properties then off the Firewall state on every profile, lastly hit apply then OK
+- After that, the firewall should be off
+<br>
+<h3>Set Client-1's DNS settings to DC-1's Private IP address </h3>
 
-(insert pic 15:35)
+![image](https://github.com/user-attachments/assets/e10e0a4d-e6d9-4a21-bb49-14efe66e7932)
+<br>
 
+![image](https://github.com/user-attachments/assets/c3d1646f-c8a2-4957-9859-202fc56bfaad)
+<br>
+- Go  Azure portal get DC-1's Private IP address and copy it
+- Go to Client 1 to Networking to Network Settings and click on Client 1's Virtual Network Interface Card
 - Click on DNS servers hit custom and then paste the IP address of DC-1 that you copied from the Azure portal
-
-- Whenever the computer needs to lookup anything like for instance Google.com, it will look to DC-1 for it
-
-- Doing this will allow us to join the domain
-
 - Hit Save
+- Whenever the Client-1 needs to look at anything like for instance Google.com, it will look to DC-1 for it
+- Doing this will allow us to join the domain
+<br>
 
+![image](https://github.com/user-attachments/assets/3b518097-1cea-4dbe-ab4d-9e36db06652c)
+<br>
+
+![image](https://github.com/user-attachments/assets/bbdc3ff0-3e8a-4fd5-a9ec-ac15ae057661)
+<br>
 - Then go to your Virtual Machines in Azure click the box next to Client-1 and press restart at the top
-
 - From here we will attempt to log in to Client 1 and attempt to ping DC-1's private IP address
+- Get Client-1's Public IP address 
+<br>
 
-(insert pic 17:15)
+![image](https://github.com/user-attachments/assets/21174cc2-e703-4c99-afae-6fed9fb312b4)
+<br>
 
-- Click on Client 1 in Azure and copy its Public IP address 
-
-(insert pic 17:25)
-
-- Then head on over to remote desktop to enter Client-1, we are going to name this Client 1, and make sure to put in your username and password that you wrote down
-
-- Head on over to DC-1 in Azure to get the private IP address
-
-(insert pic 18:24)
-
-- Login to Client-1 and Open up PowerShell
-
-(insert pic 18:24)
-
+![image](https://github.com/user-attachments/assets/a634e67b-5ac2-4058-976b-682f2aaae698)
+<br>
+- Open Remote Desktop and enter Client-1
+- Paste the Client-1's Public IP into the Remote Desktop
+- Fill in Client-1's username and password and log in to Client-1.
+<br>
+![image](https://github.com/user-attachments/assets/3d1932fe-60a4-4bc8-b532-2cb9bfc3c708)
+<br>
+![image](https://github.com/user-attachments/assets/ab17fba3-ee32-424b-82a2-660c33f99eef)
+<br>
+![image](https://github.com/user-attachments/assets/d44e11a9-0c45-4819-9cbd-94a4c84a7ef7)
+<br>
+- Open Powershell
 - In PowerShell type ping and DC-1's private IP address and press enter
-
 - If the output says "Destination host unreachable," then they are probably in different virtual networks, or DC-1's firewall is probably still on, or ping is being blocked somehow.
 
-(insert pic 19:38)
-
+![image](https://github.com/user-attachments/assets/9f10e1c3-f0c4-4981-8867-74f398c3a827)
+<br>
+![image](https://github.com/user-attachments/assets/bbef8f2a-e4da-446e-98ca-b864277f9b8a)
+<br>
 - Type in PowerShell ipconfig /all
-
-(insert pic 19:56)
-
-- Upon execution, the line pertaining to the DNS servers should display the private IP address of DC-1 in a highlighted manner.
-
+- After execution, the DNS servers should display the private IP address of DC-1 in a highlighted manner.
 - Now client 1 should be using DC-1 as the DNS server
-
-
-
-
-
 
 
 <h1> Configuration Steps Pt. 2 </h1>
