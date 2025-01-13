@@ -137,6 +137,7 @@
 ![image](https://github.com/user-attachments/assets/3f7dc033-d930-48e8-afc0-f3b1d2649b42)
 <br>
 - Once connected and loaded if you don’t have Server Manager pop up at start-up, then search for "Server Manager" in the start menu.
+- If "Server Manager" doesn't start-up or can't be found, then you may have installed the wrong OS.
 <br>
 <h3>Turn the firewall off for DC-1</h3>
 
