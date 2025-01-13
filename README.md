@@ -299,8 +299,8 @@
 <br>
 - Right-click on Users and create a new user named "Jane Doe" with the username "jane_admin"
 - Change Jane Doe into an admin account by right-clicking her name and adding her to the “Domain Admins” security group
-
 <br>
+
 ![image](https://github.com/user-attachments/assets/fb9e25ef-487b-4958-88f7-f3b870897996)
 <br>
 <p><strong>- Logout of DC-1 and sign back in with Jane Doe’s credentials</strong></p>
@@ -308,25 +308,29 @@
 <br>
 <h3>Join Client-1 to Domain </h3>
 
-<p><strong> For Client-1 to join the domain, the DNS server must be changed. Therefore we will set it's DNS server as DC-1's private IP address</strong></p>
-
-- In the Azure Portal, select Client-1 -> Networking -> Network interface -> Settings -> DNS Server
-
-<img width="350" alt="dns servers" src="https://imgur.com/9bKXViA.png">
-
-
-<p><strong>Select custom DNS server and type in the private IP address of DC-1 and restart Client-1 virtual machine in Azure</strong></p>
-
-<img width="410" alt="dns servers2" src="https://imgur.com/5hhy1Ac.png">
-
-
-<p><strong> Now log back in to Client-1 using your original credentials. Click start and go to Settings -> Rename this PC (advanced) -> Change and add “mydomain.com” and login with the admin credentials previously created (jane_admin) </strong></p>
-
-<img width="310" alt="remote desktop first login" src="https://imgur.com/OsjB5gK.png">
-
+![image](https://github.com/user-attachments/assets/2cb8238d-2721-4fc1-b941-95777c41c40b)
 <br>
 
-<p> <strong>Once Client-1 has been added, the VM will restart.</strong></p>
+![image](https://github.com/user-attachments/assets/486ba761-99bd-42b4-9975-c98466d3047d)
+<br>
+
+![image](https://github.com/user-attachments/assets/c0633a7e-a519-4f18-8feb-53ad9851f9e3)
+<br>
+- Right-click the start button and select System
+- On the right side, click Rename This PC(Advanced)
+- Click change, select "Member of Domain" and type in mydomain.com and hit ok
+<br>
+
+![image](https://github.com/user-attachments/assets/e2f8eb9c-b901-462c-be4d-3d000c06f9f0)
+<br>
+
+![image](https://github.com/user-attachments/assets/331c5119-a73c-46c1-8d9f-75372321caa9)
+<br>
+
+![image](https://github.com/user-attachments/assets/f972bf50-8089-46b9-ad5d-31b6d03c2391)
+<br>
+- Use admin credentials to join the domain.
+- Client-1 has been added, and the VM will restart.
 
 
 
