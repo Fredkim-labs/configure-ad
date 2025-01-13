@@ -6,17 +6,15 @@
 <h1>Active Directory Deployment and Configuration </h1>
 
 
-<p>This project provides a comprehensive guide to deploying and configuring Active Directory on a designated Domain Controller (DC-1) virtual machine. We will install Active Directory, promote the server to a Domain Controller, create user accounts, and join a client machine (Client-1) to the domain. The tutorial also covers configuring Remote Desktop access for non-administrative users, ensuring a secure and functional Active Directory environment within Azure.
+<p>This project provides a guide to deploying and configuring Active Directory on a designated Domain Controller (DC-1) virtual machine. 
+  We will install Active Directory, promote the server to a Domain Controller, create user accounts, and join a client machine (Client-1) to the domain. 
+  This will also cover configuring Remote Desktop access for non-administrative users and ensuring a secure and functional Active Directory environment within Azure.
 
 </p>
 
-
-
-
-
 <h2>Environments and Technologies Used</h2>
 
-- Microsoft Azure (Virtual Machines/Compute)
+- Microsoft Azure Virtual Machine and Network
 - Remote Desktop
 - Active Directory Domain Services
 
@@ -29,176 +27,120 @@
 <h1>Creating Our Resource, Network, & Virtual Machines </h1> 
 <br>
 
-<h3>&#9312; Create The Resource Group</h3>
+<h3>Create The Resource Group</h3>
 
-
-<img width="348" alt="0" src="https://github.com/user-attachments/assets/6c7e9a17-44eb-44f1-a383-abb8bf2a97b0">
-
-  <br>
+![image](https://github.com/user-attachments/assets/2816a875-3d80-43cb-8bc8-adfb07a60116)
+<br>
   
-- Go to https://portal.azure.com/#home to get started
+- Go to https://portal.azure.com/#home 
   
-- Once you are there click on/ search Resource Groups and afterward click on create
+- Select Resource Groups and create a new one.
   
-- For me, I named mine Active-Directory-Lab, and for the region, since I'm located in the Eastcoast, East US 2 worked out
+- I named mine Active-Directory-net and select East US 2. I am on the East Coast.
 
-- Create the resource group once you receive the Validation passed green check mark
+- Create the resource group once you receive the green check mark
   
   <br><br>
 
 <h3>&#9313; Create the Virtual Network</h3>
 
-<img width="410" alt="0A" src="https://github.com/user-attachments/assets/5dbe7a9b-87a0-4c3f-a73f-5e85faaf0e47">
-
+![image](https://github.com/user-attachments/assets/e2ba70b0-4eb6-4ef4-872c-a5cb2c323fe9)
 <br>
 
-- For this new step we will be creating the virtual network instead of having the virtual machine do it for us
+- Next, create a virtual network,
 
 - Search for Virtual Networks then hit create 
 
-- Put it in your resource Group that we made, this network will be named Active-Directory-VNet
+- Select active Resource Group and name the Virtual Network - Active-Directory-VNet
 
-- select your region, once you hit click on "Review + Create," hit "Create"
+- Select your region, click on "Review + Create," and "Create".
   
-<h3>&#9314; Please proceed with the creation of the virtual machines, beginning with DC-1</h3>
+<h3>Create a Virtual Machine, the beginning of DC-1</h3>
 
-<img width="558" alt="1" src="https://github.com/user-attachments/assets/fa689f9f-99ff-4d91-86ac-0be9625dc3f5">
-
-
+![image](https://github.com/user-attachments/assets/1708079b-6256-46ea-a0fc-a17957181e8e)
+<br>
+![image](https://github.com/user-attachments/assets/04b0257a-4d86-4dbb-a8ae-736dcf0a21d1)
 <br>
 
 - Search for Virtual Machines and hit create 
 
-- Please select your designated resource group. For the name of the virtual machine, I have chosen "DC-1"
+- Please select your designated resource group. Name the virtual machine, I named mine "DC-1"
   
-- I have selected my region and configured the availability options to "Availability Zone," ensuring that "Self-Selected Zone" is also marked. For all other settings, I have retained the options as displayed. Furthermore, I have chosen the image for this virtual machine as "Windows Server 2022 Datacenter Azure Edition - x64 Gen 2"
+- I have selected East US 2 for Region
+- Select "Windows Server 2022 Datacenter Azure Edition Hotpatch- x64 Gen 2"
   
-<img width="545" alt="1A" src="https://github.com/user-attachments/assets/b3585c30-9b36-410e-b2c8-76b6c8fc3bb4">
-
+![image](https://github.com/user-attachments/assets/b172051b-b136-44ff-8991-ba601ddfa421)
 <br>
-
-- When determining the appropriate size, it is essential to ensure that there are a minimum of 2 virtual CPUs (VCPUs) allocated. Additionally, it is advisable to document your username and password in a secure location for future reference
-
-  <br>
-
-<img width="554" alt="1B" src="https://github.com/user-attachments/assets/8506c85c-be52-4ff6-b380-99c1d316bd8c">
-
+![image](https://github.com/user-attachments/assets/31dd2735-33bd-4231-9c12-247c3cf20b3d)
 <br>
-
-- Please ensure that both of the licensing agreements presented are checked, and then proceed by selecting the Networking option
-  
-  <br>
-
-<img width="556" alt="1C" src="https://github.com/user-attachments/assets/2fb1fb90-1a66-4952-9346-943647be0548">
-  
-  <br>
-  
-- When configuring the virtual network option, please ensure that you select the Virtual Network that has been established, It is advisable to retain all other settings at their default values, After confirming these selections, click on "Review + Create," followed by "Create" Upon completion of this process, we will proceed to create the subsequent virtual machine, designated as Client 1
-
-<h3>&#9315; Set up the virtual machine named Client-1 </h3>
-
+- It is essential to ensure that there are a minimum of 2 virtual CPUs (VCPUs) allocated.
+- It is advisable to document your username and password for future reference
+- Check both of the licensing agreements and then proceed by selecting the Networking option
+<br>
+  ![image](https://github.com/user-attachments/assets/c7a5ba9f-7745-46de-8d56-5473fbd7e430)
 <br>
   
-<img width="551" alt="2" src="https://github.com/user-attachments/assets/0a1cb73f-08da-4ec7-8ab1-c315c39e7eb3">
+- After confirming these selections, click on "Review + Create," followed by "Create". This virtual machine will designated as DC-1(Domain Controller-1) 
 
+<h3>Create a Virtual machine named Client-1 </h3>
+<br> 
+
+![image](https://github.com/user-attachments/assets/b9ee4fbb-434b-45c3-adaf-e2f3712cd6e1)
 <br>
-
+![image](https://github.com/user-attachments/assets/ca547d44-4197-4443-94de-2cae3aada4b7)
+<br>
+![image](https://github.com/user-attachments/assets/4cbea7d7-e379-432f-a5dd-70c32b635fff)
+<br>
 - The virtual machine will be designated as "Client-1"
-
-- Put it in the same resource group that you made
-
-- We will be using Windows 10 Pro, Version 22H2 - x64 Gen 2 for the image
-
-  <br>
-
-<img width="552" alt="3" src="https://github.com/user-attachments/assets/df842a56-0c16-4278-8404-2550690f59c5">
-  
-  <br>
-
-- Make sure the size has at least 2 vcpus, and write down the username 
- and password for this virtual machine as well
-
-  <br>
-
-<img width="557" alt="4" src="https://github.com/user-attachments/assets/183db735-7a52-4d52-8c82-59253e9c8358">
-  
-  <br>
-
-- Heading over to Networking we will place this Virtual Machine in the Active-Directory-VNet that we made
- 
+- Select the same resource group that you made
+- Select the Windows 10 Pro, Version 22H2 - x64 Gen 2 for the image
+- Make sure the size has at least 2 vcpus.
+- Go to Networking and select Active-Directory-VNet.
 - Leave the rest to its defaults and click on "Review + Create," followed by "Create"
+<br>
 
-  <br>
-
-<img width="1274" alt="4A" src="https://github.com/user-attachments/assets/a4fde97d-0d0c-4c2c-a518-78ba07d70d88">
-
-  <br>
-
-- Here are the 2 Virtual machines that we will be using for the rest of this project
-
+![image](https://github.com/user-attachments/assets/7d2babae-b5c2-4006-bb76-c93428a0df7e)
+<br>
+- Here are the 2 Virtual machines that we will be using for the rest of this project.
+<br>
 <h1> Configuration Steps</h1>
   <br>
 
-<h3>&#9312; Change DC-1's Nic Private IP address to be static</h3>
+<h3>Change DC-1's NIC Private IP address to static</h3>
 
+![image](https://github.com/user-attachments/assets/6a4d753d-3825-4d33-9807-55672878dc3b)
 <br>
-
+![image](https://github.com/user-attachments/assets/35516c59-6b5f-4038-b8e9-1a9488782951)
+<br>
+![image](https://github.com/user-attachments/assets/a4cf3190-b84a-419c-b59c-0f486c99be49)
+<br>
 - We will begin by going to the virtual machine dc-1 and going to the network settings
-
-<img width="1486" alt="5" src="https://github.com/user-attachments/assets/fd555109-48a1-4e0e-8ba9-796d9f6f6582" />
-
-<br>
-
 - Click on the Network interface card for dc-1 
-<br>
-
-<img width="1325" alt="6" src="https://github.com/user-attachments/assets/40354938-12eb-4927-9693-6559be383ce2" />
-
-<br>
-
-- Click on ipconfig to alter this to Static instead of dynamic
-<br>
-
-<img width="505" alt="7" src="https://github.com/user-attachments/assets/9cb9dee8-084d-4824-9912-10be5239f355" />
-
-<br>
-
-- Under Private IP address settings instead of dynamic click on static and save this
-
-- Once you save this head back into dc-1's network settings
-
-- The Private IP address should no longer change regardless of how many times the virtual machine is restored
-
+- Click on ipconfig to alter this to Static
+- DC-1's IP address is 10.0.0.4 and should not change.
   <br>
+<h3>Connect to DC-1 and Disable Firewall</h3>
 
-<h3>&#9313; Connect to DC-1</h3>
-
-- (insert pic 12:21)
-  
-- First, copy the public IP address in dc-1
-
-- Open Microsoft Remote Desktop --> name it dc-1 ---> paste the public IP address in the PC name ---> press add to connect (if needed put in the username and password u made to connect)
-
+![image](https://github.com/user-attachments/assets/58d8b817-b8fc-46b4-9ff8-c2bb359f58c5)
+<br>
+![image](https://github.com/user-attachments/assets/2e523125-eaab-4984-802e-76c20dc21cac)
+<br>
+![image](https://github.com/user-attachments/assets/7a46f009-189f-4118-9658-c638f5d7aed8)
 <br>
 
-<img width="1676" alt="12" src="https://github.com/user-attachments/assets/a1fafc6e-e3af-441a-af58-bd18ac2b7a8e" />
-
+- Copy the public IP address of DC-1
+- Open Microsoft Remote Desktop
+- Fill in DC-1's public IP addiress
+- Fill in the Credentials
 <br>
 
-- Once connected and loaded if you don’t have Server Manager pop up at the start then you logged in to the wrong virtual machine or created the wrong type
-
+![image](https://github.com/user-attachments/assets/3f7dc033-d930-48e8-afc0-f3b1d2649b42)
 <br>
-  
-
-<h3>&#9314; Turn the firewall off for DC-1</h3>
-
-
-
-<img width="1046" alt="8" src="https://github.com/user-attachments/assets/c16c4619-f998-493a-8177-e550011100b4" />
-
+- Once connected and loaded if you don’t have Server Manager pop up at start-up, then search for "Server Manager" in the start menu.
 <br>
+<h3>Turn the firewall off for DC-1</h3>
 
-(insert pic 13:34)
+
 
 - In the domain controller right click the start menu and press run, type wf.msc this is for Windows firewall
 
